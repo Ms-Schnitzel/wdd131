@@ -17,7 +17,7 @@ header {
   margin: 0 auto;
 }
 
-header span, h1 {
+header span, header h1 {
   display: block;
   background-color: var(--primary-color);
   color: var(--font-color);
