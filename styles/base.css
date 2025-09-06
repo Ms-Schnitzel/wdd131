@@ -17,12 +17,13 @@ header {
   margin: 0 auto;
 }
 
-header span {
+header span, h1 {
   display: block;
   background-color: var(--primary-color);
   color: var(--font-color);
   text-align: center;
-  padding: 10px;
+  padding: 7px;
+  /* margin: 5px; */
 }
 
 nav {
