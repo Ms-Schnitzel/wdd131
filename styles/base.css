@@ -93,6 +93,36 @@ main h1 {
   border-radius: 20px;
 }
 
+.links {
+  width: 75%;
+  height: 40px;
+  margin: 30px;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 15px;
+  list-style-type: none;
+  background-color: var(--accent-color);
+   display: flex;
+   justify-content: space-around;
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-rows: 1fr 1fr;  */
+}
+
+.links a {
+  margin: 10px;
+  transition: .2s;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  /* grid-column: span 1; */
+  /* grid-row: span 1; */
+}
+
+.links a:hover {
+  text-decoration: overline underline;
+  font-size: 1.2em;
+}
+
 footer {
   display: block;
   background-color: var(--primary-color);
