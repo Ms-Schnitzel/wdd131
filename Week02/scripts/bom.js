@@ -11,13 +11,13 @@ const deleteButton = document.createElement('button');
 // li.append(deleteButton);
 // list.append(li);
 
-button.addEventListener("click", function () {
+button.addEventListener('click', function () {
   if (input.value.trim() !== "") {
     li.textContent = input.value;
     deleteButton.textContent = '❌';
 
     li.append(deleteButton);
-    list.append(li);
+    list.appendChild(li);
 
     deleteButton.addEventListenter("click", function () {
       list.removeChild(li);
@@ -30,5 +30,5 @@ button.addEventListener("click", function () {
     alert("Please enter your Book and Chapter!")
     input.focus();
   }
-})
+});
 
