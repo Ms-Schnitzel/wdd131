@@ -1,0 +1,39 @@
+#menu {
+  display: none;
+}
+
+.navbar {
+  width: 80%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+main {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+main h1 {
+  grid-column: 1 / 4;
+}
+
+figure {
+  grid-column: span 1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+img {
+  margin: auto;
+  margin-bottom: 5px;
+  width: 90%;
+  /* height: 90%; */
+  object-fit: contain;
+}
+
+figcaption {
+  text-align: center;
+}
