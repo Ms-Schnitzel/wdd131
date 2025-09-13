@@ -1,7 +1,7 @@
 @media screen and (max-width: 800px) {
   main {
     width: 85%;
-    max-width: 640;
+    max-width: 640px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
