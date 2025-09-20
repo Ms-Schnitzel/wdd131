@@ -10,9 +10,7 @@ const chill_value = document.getElementById("chill-value");
 
 
 const calculateWindChill = (airTemp, windSpeed) => {
-  windChill = 13.12 + (0.6215 * airTemp) - (11.37 * windSpeed ** 0.16) + (0.3965 * airTemp * windSpeed ** 0.16);
-  windChill = Math.round(windChill);
-  return windChill;
+  return Math.round(13.12 + (0.6215 * airTemp) - (11.37 * windSpeed ** 0.16) + (0.3965 * airTemp * windSpeed ** 0.16));
 };
 
 if (temp <= 10 && wind > 4.8) {
