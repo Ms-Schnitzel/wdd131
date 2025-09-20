@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Zealand | Dream Destination</title>
+  <meta name="description" content="New Zealand, my dream vacation destination that I would like to visit in the future.">
+  <meta name="author" content="Zachery Nielsen">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>New Zealand</h1>
+  </header>
+  <main>
+    <picture class="hero-img">
+      <source srcset="/images/new-zealand-large.webp" media="(min-width: 800px)">
+      <img src="/images/new-zealand-small.webp" alt="country-sample">
+    </picture>
+    <section class="data">
+      <h2>Data</h2>
+      <p class="label">Area:</p>
+      <p class="value">101,660 sq mi</p>
+      <p class="label">Population:</p>
+      <p class="value">5,331,880</p>
+      <p class="label">Capital:</p>
+      <p class="value">Wellington</p>
+      <p class="label">Languages:</p>
+      <p class="value">English, Māori</p>
+      <p class="label">Currency:</p>
+      <p class="value">New Zealand Dollar</p>
+      <p class="label">Time Zone:</p>
+      <p class="value">UTC+12</p>
+    </section>
+    <section class="weather">
+      <h2>Weather</h2>
+      <img src="/images/weather-icon.svg" alt="current-weather" class="weather-icon">
+      <p class="label">Temperature:</p>
+      <p class="value" id="temp-value"></p>
+      <p class="label">Conditions:</p>
+      <p class="value" id="con-value"></p>
+      <p class="label">Wind:</p>
+      <p class="value" id="wind-value"></p>
+      <p class="label">Wind Chill:</p>
+      <p class="value" id="chill-value"></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; <span id="currentYear"></span> 🪴 Zachery Nielsen 🪴 New Zealand</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+
+</html>
