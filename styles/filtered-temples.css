@@ -1,0 +1,52 @@
+@media screen and (max-width: 800px) {
+  main {
+    width: 85%;
+    max-width: 640px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    /* display: block; */
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+
+  nav a {
+    padding-top: 0;
+  }
+
+  .navbar {
+    list-style: none;
+    display: none;
+  }
+
+  .show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #menu {
+    display: block;
+    margin-left: 7px;
+    text-decoration: none;
+    font-size: 3rem;
+    color: black;
+  }
+
+  #menu::before {
+    content: "≡";
+  }
+
+  #menu.show::before {
+    content: "X";
+  }
+
+  figure {
+    grid-column: 1;
+  }
+
+}
