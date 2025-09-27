@@ -7,6 +7,10 @@
     grid-template-columns: 1fr;
   }
 
+  section {
+    grid-column: 1 / 2;
+  }
+
   nav {
     /* display: block; */
     flex-direction: column;
@@ -43,10 +47,6 @@
 
   #menu.show::before {
     content: "X";
-  }
-
-  figure {
-    grid-column: 1;
   }
 
 }

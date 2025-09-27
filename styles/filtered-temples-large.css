@@ -11,6 +11,7 @@
 }
 
 main {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -18,22 +19,43 @@ main h1, h2 {
   grid-column: 1 / 4;
 }
 
-figure {
+section {
   grid-column: span 1;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   margin: 10px;
+  padding: 15px;
+  background-color: var(--accent-color);
+  border: solid 2px gray;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+section h2 {
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+section h3 {
+  grid-column: 1 / span 1;
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+section p {
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 img {
   margin: auto;
   margin-bottom: 5px;
+  grid-column: span 2;
   width: 90%;
   /* height: 90%; */
   object-fit: contain;
-}
-
-figcaption {
-  text-align: center;
+  border: solid 1px gray;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 0;
 }

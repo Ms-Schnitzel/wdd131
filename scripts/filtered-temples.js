@@ -1,12 +1,34 @@
 const navbar = document.querySelector(".navbar");
 const burger = document.querySelector("#menu");
-const gallery = document.querySelector("#gallery");
+const main = document.querySelector("main");
+const filter = document.querySelector("#filter");
+const home = document.querySelector("#home");
+const oldDate = document.querySelector("#old");
+const newDate = document.querySelector("#new");
+const large = document.querySelector("#large");
+const small = document.querySelector("#small");
 
-burger.addEventListener("click", () =>
-  {
-    navbar.classList.toggle("show");
-    burger.classList.toggle("show");
-})
+burger.addEventListener("click", () => {
+  navbar.classList.toggle("show");
+  burger.classList.toggle("show");
+});
+
+home.addEventListener("click", () => {
+  allTemples(temples);
+});
+
+oldDate.addEventListener("click", () => {
+  oldTemples(temples);
+});
+newDate.addEventListener("click", () => {
+  newTemples(temples);
+});
+small.addEventListener("click", () => {
+  smallTemples(temples);
+});
+large.addEventListener("click", () => {
+  largeTemples(temples);
+});
 
 const temples = [
   {
@@ -93,23 +115,72 @@ const temples = [
 
 const template = (temple, location, date, area, image) => {
   return `
-  <section class="temple-card">
     <h2>${temple}</h2>
-    <div class="information">
-      <h3>Location:</h3>
-      <p>${location}</p>
-      <h3>Dedicated:</h3>
-      <p>${date}</p>
-      <h3>Size:</h3>
-      <p>${area} sq ft</p>
-    </div>
+    <h3>Location:</h3>
+    <p>${location}</p>
+    <h3>Dedicated:</h3>
+    <p>${date}</p>
+    <h3>Size:</h3>
+    <p>${area} sq ft</p>
     <img src="${image}" alt="${temple} temple" loading="lazy">
-  </section>
   `
 }
 
-testGallery = template(temples[0].templeName, temples[0].location, temples[0].dedicated, temples[0].area, temples[0].imageUrl);
+const displayTemples = (templeArray) => {
+  for (let i = 0; i < templeArray.length; i++) {
+    let newTemplate = template(templeArray[i].templeName, templeArray[i].location, templeArray[i].dedicated, templeArray[i].area, templeArray[i].imageUrl);
+    let newCard = document.createElement("section");
+    newCard.innerHTML = newTemplate;
+    main.appendChild(newCard);
+  };
+}
 
-console.log(testGallery);
+const oldTemples = (templeArray) => {
+  while (main.lastChild.tagName === "SECTION") {
+    main.removeChild(main.lastChild);
+  };
+  filter.textContent = "Old";
+  // age = parseInt(templeArray.dedicated);
+  templeFilter = templeArray.filter(age => parseInt(age.dedicated) < 1900);
+  console.log(templeFilter);
+  displayTemples(templeFilter);
+};
 
-gallery.innerHTML = testGallery;
+const newTemples = (templeArray) => {
+   while (main.lastChild.tagName === "SECTION") {
+    main.removeChild(main.lastChild);
+  };
+  filter.textContent = "New";
+  templeFilter = templeArray.filter(age => parseInt(age.dedicated) > 2000);
+  displayTemples(templeFilter);
+};
+
+const smallTemples = (templeArray) => {
+   while (main.lastChild.tagName === "SECTION") {
+    main.removeChild(main.lastChild);
+  };
+  filter.textContent = "Small";
+  templeFilter = templeArray.filter(size => size.area < 10000);
+  displayTemples(templeFilter);
+};
+
+const largeTemples = (templeArray) => {
+   while (main.lastChild.tagName === "SECTION") {
+    main.removeChild(main.lastChild);
+  };
+  filter.textContent = "Large";
+  templeFilter = templeArray.filter(size => size.area > 10000);
+  displayTemples(templeFilter);
+};
+
+const allTemples = (templeArray) => {
+   while (main.lastChild.tagName === "SECTION") {
+    main.removeChild(main.lastChild);
+  };
+  filter.textContent = "Home";
+  displayTemples(templeArray);
+};
+
+allTemples(temples);
+
+console.log(main.lastElementChild.tagName);
