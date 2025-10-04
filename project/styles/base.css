@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #ff6d00;
+  /* used for website name and major titles/headings */
+  --secondary-color: #03045e;
+  /* used for backgrounds and emphasis with primary color */
+  --accent-color: #e7e7e7;
+  /* used for text color */
+  --font: "Playfair Display", serif;
+  /* general font to be used with all text on the website */
+}
+
+* {
+  font-family: var(--font);
+}
