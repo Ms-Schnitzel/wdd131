@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <meta name="description" content="A form to rate and review your product.">
+    <meta name="author" content="Zachery Nielsen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/form.css">
+  <script src="./scripts/getdates.js" defer></script>
+  <script src="./scripts/form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Product Review</h1>
+    </header>
+    <main>
+      <form action="/review.html" method="get">
+        <label>
+          Product Name<br>
+          <select id="products" required>
+            <option disabled selected value="">Select a Product...</option>
+            <!-- <option></option> -->
+          </select>
+        </label>
+        
+        <hr>
+        <label>Overall Rating</label>
+        <div class="rating">
+          <input type="radio" id="fivestar" name="rating" value="5" ><label for="fivestar"></label>
+          <input type="radio" id="fourstar" name="rating" value="4" ><label for="fourstar"></label>
+          <input type="radio" id="threestar" name="rating" value="3" ><label for="threestar"></label>
+          <input type="radio" id="twostar" name="rating" value="2" ><label for="twostar"></label>
+          <input type="radio" id="onestar" name="rating" value="1" ><label for="onestar"></label>
+        </div>
+        <hr>
+        <label>Date of Installation<br><input type="date" id="date" required></label>
+        
+        <hr>
+        <label>Which features did you find useful in the product?<br><i>(Check all that apply)</i></label>
+        <div class="features">
+          <label for="durability"><input type="checkbox" id="durability" name="durability" value="durability"> Durability</label>
+          <label for="ease"><input type="checkbox" id="ease" name="ease" value="ease"> Ease of Use</label>
+          <label for="performance"><input type="checkbox" id="performance" name="performance" value="performance"> Performance</label>
+          <label for="design"><input type="checkbox" id="design" name="design" value="design"> Design</label>
+        </div>
+        <hr>
+        <label for="written">Written Review <i class="optional">(optional)</i></label>
+        <textarea id="written" name="written"></textarea>
+        <hr>
+        <label for="name">Your Name <i class="optional">(optional)</i><br><input type="text" id="name" name="name"></label>
+        
+        <!-- <br> -->
+        <input type="submit" id="submit-btn" value="Post Review">
+        
+        
+        
+      </form>
+    </main>
+    <footer>
+      <p>&copy; <span id="currentYear"></span> 🪴 Zachery Nielsen 🪴 Utah, United States</p>
+      <p id="lastModified"></p>
+    </footer>
+  </body>
+</html>
+
+
+<!-- review.html -->
