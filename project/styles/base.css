@@ -11,7 +11,77 @@
 
 * {
   font-family: var(--font);
+  color: var(--accent-color);
 }
+
+/* ===== Header ===== */
+
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* .title h1 {
+
+} */
+
+.logo {
+  display: fixed;
+  width: 150px;
+  margin: -30px;
+  position: absolute;
+  left: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: 0.2s;
+}
+
+a:hover {
+  text-decoration: overline underline ;
+  font-size: 1.7em;
+}
+
+ul {
+  list-style: none;
+}
+
+
+
+
+
+/* ===== Footer ===== */
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  display: block;
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+
+
+/* ===== siteplan ===== */
 
 .primary {
   color: var(--primary-color);
@@ -28,3 +98,4 @@
   background-color: var(--secondary-color);
   width: 290px;
 }
+
