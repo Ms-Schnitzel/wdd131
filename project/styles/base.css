@@ -36,7 +36,6 @@ header {
 } */
 
 .logo {
-  display: fixed;
   width: 150px;
   margin: -30px;
   position: absolute;
