@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
   <script src="scripts/getdates.js" defer></script>
-  <script type="module" src="scripts/home.js" defer></script>
+  <script type="module" src="scripts/categories.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,19 +30,16 @@
     </header>
     <main>
       <section class="media-grid"></section>
-      <section class="side-box" id="popular">
-        <h2>Popular Tags</h2>
-        <ul>
-          <li><a href="categories.html">Action</a></li>
-          <li><a href="categories.html">Comedy</a></li>
-          <li><a href="categories.html">Sci-Fi</a></li>
-        </ul>
-      </section>
-      <section class="side-box" id="jump-in">
-        <h2>Can't decide what to watch?</h2>
-        <ul>
-          <li><a id="movie-random"></a></li>
-          <li><a id="show-random"></a></li>
+      <section class="side-box tags">
+        <h2>Filter by Tag</h2>
+        <ul id="tag-list"></ul>
+        <button id="clear-btn">Clear Tag Selection</button>
+        <hr>
+        <h2>Filter by Type</h2>
+        <ul id="type-list">
+          <li class="type-filter" id="movie">Movies</li>
+          <li class="type-filter" id="show">Shows</li>
+          <li class="type-filter" id="all">All</li>
         </ul>
       </section>
     </main>
