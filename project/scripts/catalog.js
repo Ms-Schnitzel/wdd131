@@ -9,7 +9,7 @@ export const movies = [
   {
     name: "Star Wars: Episode V - The Empire Strikes Back",
     description: "After the Empire overpowers the Rebel Alliance, Luke Skywalker begins training with Jedi Master Yoda, while Darth Vader and bounty hunter Boba Fett pursue his friends across the galaxy.",
-    img: "./img/star-wars-5.jpeg",
+    img: "./img/star-wars-5.jpg",
     tags: ["action", "adventure", "sci-fi", "fantasy"],
     trending: false
   },
@@ -172,7 +172,14 @@ export const shows = [
 ];
 export const tags = ["action", "adventure", "animated", "comedy", "fantasy", "romance", "sci-fi"];
 
+const navbar = document.querySelector(".navbar");
+const burger = document.querySelector("#menu");
 const mediaGrid = document.querySelector(".media-grid");
+
+burger.addEventListener("click", function () {
+  navbar.classList.toggle("show");
+  burger.classList.toggle("show");
+})
 
 const mediaBox = (name, img, description, tags) => {
   if (tags === "") {

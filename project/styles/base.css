@@ -64,6 +64,10 @@ ul {
   list-style: none;
 }
 
+#menu {
+  display: none;
+}
+
 
 /* ===== Main ===== */
 
