@@ -9,7 +9,6 @@ const showArray = shows;
 const allArray = movieArray.concat(showArray);
 
 localStorage.setItem("type", "all");
-let preloadTitle = localStorage.getItem("title");
 
 const setTitles = (array) => {
   mediaName.replaceChildren();
@@ -69,4 +68,8 @@ mediaName.addEventListener("change", function () {
 })
 
 setMedia();
-// setBoxDisplay([preloadTitle]);
+let preloadTitle = setDisplayTitle();
+console.log(localStorage.getItem("title"));
+console.log(preloadTitle);
+// let preloadTitle = setDisplayTitle();
+setBoxDisplay([preloadTitle]);

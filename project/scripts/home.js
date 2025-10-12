@@ -35,6 +35,15 @@ const setMediaRandom = (movies, shows) => {
   showRandom.href = "search.html";
 }
 
+
+movieRandom.addEventListener("click", function () {
+  localStorage.setItem("title", movieRandom.textContent);
+});
+
+showRandom.addEventListener("click", function () {
+  localStorage.setItem("title", showRandom.textContent);
+});
+
 setTrendingBoxes();
 setBoxDisplay(trendingBoxes);
 setMediaRandom(movies, shows);

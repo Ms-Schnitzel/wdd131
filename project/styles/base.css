@@ -8,9 +8,6 @@
   /* used for backgrounds and emphasis with primary color */
   --font-color: #e7e7e7;
   /* used for text color and whitespace*/
-  /* --accent-color: #343a40; */
-  /* --accent-color: #6c757d; */
-  /* used for block backgrounds */
   --font: "Playfair Display", serif;
   /* general font to be used with all text on the website */
 }
@@ -101,7 +98,7 @@ main {
   padding: 15px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 20%);
+  grid-template-rows: repeat(5, 1fr);
   align-items: center;
   justify-items: center;
   height: 600px;
@@ -123,11 +120,13 @@ main {
   height: 100%;
   border: solid 2px var(--font-color);
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.media-box p {
+.description {
   grid-column: span 1;
   grid-row: 5 / 6;
+  /* padding: 30px 0; */
 }
 
   /* == side boxes */
@@ -200,7 +199,8 @@ form {
   background-color: var(--secondary-faded);
   border: solid 5px var(--secondary-color);
   border-radius: 20px;
-  margin: 0 auto;
+  /* margin: 50px auto; */
+  margin-top: 100px;
   padding: 10px;
 }
 
@@ -260,6 +260,28 @@ option {
 .solo-display {
   grid-column: span 2;
   grid-row: span 2;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: repeat(7, 1fr); */
+  height: 700px;
+}
+
+.solo-display h2 {
+  grid-column: span 2;
+}
+
+.solo-display .description {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 2;
+  padding: 20px;
+}
+
+.solo-display img {
+  grid-row: 2 / span 3;
+}
+
+.tag-list {
+  grid-column: 1 / span 2;
+  grid-row: 5 / span 1;
 }
 
 

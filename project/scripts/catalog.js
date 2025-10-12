@@ -174,12 +174,22 @@ export const tags = ["action", "adventure", "animated", "comedy", "fantasy", "ro
 
 const mediaGrid = document.querySelector(".media-grid");
 
-const mediaBox = (name, img, description) => {
-  return `
+const mediaBox = (name, img, description, tags) => {
+  if (tags === "") {
+    return `
+      <h2>${name}</h2>
+      <img src="${img}" alt="${name} poster" loading="lazy">
+      <p>${description}</p>
+    `
+  } else {
+    return `
     <h2>${name}</h2>
     <img src="${img}" alt="${name} poster" loading="lazy">
-    <p>${description}</p>
+    <p class="description">${description}</p>
+    <p class="tag-list">${tags}</p>
   `
+  }
+  
 }
 
 export const clearDisplay = () => {
@@ -191,12 +201,25 @@ export const setBoxDisplay = (media) => {
   for (let i = 0; i < media.length; i++) {
     let newBox = document.createElement("div");
     newBox.classList.add("media-box");
-    let newMedia = mediaBox(media[i].name, media[i].img, media[i].description);
-    newBox.innerHTML = newMedia;
+    // let newMedia = mediaBox(media[i].name, media[i].img, media[i].description, );
     if (mediaGrid.id === "media-single") {
       newBox.classList.add("solo-display");
-    };
-    mediaGrid.appendChild(newBox);
+      // let tagsString = document.createElement("p");
+      // tagsString.classList.add("tag-list");
+      let arrayToString = media[i].tags;
+      let arrayString = arrayToString.join(", ")
+      arrayString = "Tags: " + arrayString;
+      let newMedia = mediaBox(media[i].name, media[i].img, media[i].description, arrayString);
+      // newBox.appendChild(tagsString);
+      newBox.innerHTML = newMedia;
+      mediaGrid.appendChild(newBox);
+    } else {
+      let newMedia = mediaBox(media[i].name, media[i].img, media[i].description, "");
+      newBox.innerHTML = newMedia;
+      mediaGrid.appendChild(newBox);
+    }
+    // newBox.innerHTML = newMedia;
+    // mediaGrid.appendChild(newBox);
   }
 }
 

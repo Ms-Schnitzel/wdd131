@@ -24,6 +24,8 @@ const setTagList = (tag) => {
 clearBtn.addEventListener("click", function () {
   clearDisplay();
   displayArray = [];
+  movieArray = movies;
+  showArray = shows;
   setBoxDisplay(displayArray.concat(movies, shows));
 });
 
