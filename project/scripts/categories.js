@@ -2,10 +2,10 @@ import { movies, shows, tags, setBoxDisplay, clearDisplay } from "./catalog.js";
 
 const tagList = document.querySelector("#tag-list");
 const clearBtn = document.querySelector("#clear-btn");
-const typeFilter = document.querySelectorAll(".type-filter")
+const typeFilter = document.querySelectorAll(".type-filter");
 
-let type = "all"
-localStorage.setItem("type", type)
+let type = "all";
+localStorage.setItem("type", type);
 
 let displayArray = [];
 let movieArray = movies;
@@ -16,7 +16,7 @@ const setTagList = (tag) => {
     let newLi = document.createElement("li");
     newLi.textContent = tag[i];
     newLi.id = tag[i];
-    newLi.classList.add("tag-btn")
+    newLi.classList.add("tag-btn");
     tagList.appendChild(newLi);
   }
 }
@@ -29,9 +29,21 @@ clearBtn.addEventListener("click", function () {
 
 typeFilter.forEach(function (button, index) {
   button.addEventListener("click", function () {
-    console.log("button clicked: ", typeFilter[index].id);
+    // clearDisplay();
+    displayArray = [];
     localStorage.setItem("type", typeFilter[index].id);
-    console.log(localStorage.getItem("type"));
+    if (localStorage.getItem("type") === "movie") {
+      displayArray = movieArray;
+      setBoxDisplay(displayArray);
+    } else if (localStorage.getItem("type") === "show") {
+      displayArray = showArray;
+      setBoxDisplay(displayArray);
+    } else if (localStorage.getItem("type") === "all") {
+      displayArray = movieArray.concat(showArray);
+      setBoxDisplay(displayArray);
+    } else {
+      alert("No type selected!");
+    }
   });
 });
 
@@ -106,7 +118,7 @@ const commonTag = (filter, type) => {
       }
     }
   } else {
-    // alert("Media type required!");
+    alert("Media type required!");
   }
   console.log("new display: ", newDisplay);
   return newDisplay;
@@ -145,9 +157,3 @@ tagBtns.forEach(function(button, index) {
 
 console.log(movieArray);
 setBoxDisplay(displayArray.concat(movies, shows));
-
-
-// first set filter to show, movie, or both.  Then, when setting tags you can set multiple filter requirements
-  // if you are set to just shows, run a show comedy and show action
-  // if you are set to both shows and movies, run a show comedy and show action, then a movie comedy and movie action
-  // having show/movie set first lets you know if you need to run the tag check on one or both at the same time

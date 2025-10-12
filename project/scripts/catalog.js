@@ -193,6 +193,9 @@ export const setBoxDisplay = (media) => {
     newBox.classList.add("media-box");
     let newMedia = mediaBox(media[i].name, media[i].img, media[i].description);
     newBox.innerHTML = newMedia;
+    if (mediaGrid.id === "media-single") {
+      newBox.classList.add("solo-display");
+    };
     mediaGrid.appendChild(newBox);
   }
 }

@@ -190,16 +190,77 @@ main {
 }
 
 
+/* ===== search.html ===== */
+form {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  background-color: var(--secondary-faded);
+  border: solid 5px var(--secondary-color);
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 10px;
+}
 
+form h2 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
 
+form hr {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+  height: 0;
+  width: 100%;
+}
 
+label {
+  text-align: right;
+  align-self: center;
+  margin-right: 10px;
+}
 
+select {
+  background-color: var(--primary-faded);
+  border: solid 3px var(--primary-color);
+  border-radius: 10px;
+  margin: 5px;
+  text-wrap: wrap;
+  /* align-self: center; */
+}
 
+#media-label {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+}
 
+#media-dropdown {
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 1;
+}
 
+#name-label {
+  grid-column: 1 / span 1;
+  grid-row: 4 / span 1;
+}
 
+#media-name {
+  grid-column: 2 / span 2;
+  grid-row: 4 / span 1;
+}
 
+option {
+  background-color: var(--secondary-faded);
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+}  
 
+.solo-display {
+  grid-column: span 2;
+  grid-row: span 2;
+}
 
 
 

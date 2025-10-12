@@ -29,7 +29,19 @@
       </nav>
     </header>
     <main>
-      ***
+      <form>
+        <h2>Search For A Title</h2>
+        <hr>
+        <label for="media-dropdown" id="media-label">Media Type:</label>
+        <select name="media-dropdown" id="media-dropdown">
+          <option value="all" id="all" class="type-select" selected>All</option>
+          <option value="movies" id="movies" class="type-select">Movies</option>
+          <option value="shows" id="shows" class="type-select">Shows</option>
+        </select>
+        <label for="media-name" id="name-label">Title:</label>
+        <select name="media-name" id="media-name"></select>
+      </form>
+      <section class="media-grid" id="media-single"></section>
     </main>
     <footer>
       <p>&copy; <span id="currentYear"></span> 🪴 Zachery Nielsen 🪴 Utah, United States</p>
