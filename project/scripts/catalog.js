@@ -9,7 +9,7 @@ export const movies = [
   {
     name: "Star Wars: Episode V - The Empire Strikes Back",
     description: "After the Empire overpowers the Rebel Alliance, Luke Skywalker begins training with Jedi Master Yoda, while Darth Vader and bounty hunter Boba Fett pursue his friends across the galaxy.",
-    img: "./img/star-wars-5.webp",
+    img: "./img/star-wars-5.jpeg",
     tags: ["action", "adventure", "sci-fi", "fantasy"],
     trending: false
   },
