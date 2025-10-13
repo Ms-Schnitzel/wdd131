@@ -212,7 +212,7 @@ export const setBoxDisplay = (media) => {
       newBox.classList.add("solo-display");
       let arrayToString = media[i].tags;
       let arrayString = arrayToString.join(", ")
-      arrayString = "Tags: " + arrayString;
+      arrayString = `Tags: ${arrayString}`;
       let newMedia = mediaBox(media[i].name, media[i].img, media[i].description, arrayString);
       newBox.innerHTML = newMedia;
       mediaGrid.appendChild(newBox);
