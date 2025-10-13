@@ -208,16 +208,12 @@ export const setBoxDisplay = (media) => {
   for (let i = 0; i < media.length; i++) {
     let newBox = document.createElement("div");
     newBox.classList.add("media-box");
-    // let newMedia = mediaBox(media[i].name, media[i].img, media[i].description, );
     if (mediaGrid.id === "media-single") {
       newBox.classList.add("solo-display");
-      // let tagsString = document.createElement("p");
-      // tagsString.classList.add("tag-list");
       let arrayToString = media[i].tags;
       let arrayString = arrayToString.join(", ")
       arrayString = "Tags: " + arrayString;
       let newMedia = mediaBox(media[i].name, media[i].img, media[i].description, arrayString);
-      // newBox.appendChild(tagsString);
       newBox.innerHTML = newMedia;
       mediaGrid.appendChild(newBox);
     } else {
@@ -225,8 +221,6 @@ export const setBoxDisplay = (media) => {
       newBox.innerHTML = newMedia;
       mediaGrid.appendChild(newBox);
     }
-    // newBox.innerHTML = newMedia;
-    // mediaGrid.appendChild(newBox);
   }
 }
 
